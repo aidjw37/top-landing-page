@@ -52,9 +52,9 @@ button:hover {
   padding: 75px 20%;
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 20%;
+  justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .hero-flex-item {
@@ -78,9 +78,23 @@ button:hover {
   justify-content: center;
   align-items: center;
   background-color: #9fa1a5; 
-  flex: 2 0.9 100%;
+  flex: 1;
   height: 200px;
   color: white;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+/*prevents hero signup button overflowing into hero image on narrow mobile screens*/
+@media screen and (max-width: 400px) {
+  .img-placeholder {
+    margin-top: 30%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .img-placeholder {
+    margin-top: 70%;
+  }
 }
 
 button {
@@ -115,6 +129,25 @@ button {
   font-size: 12px;
 }
 
+/*Changes GRID STYLE layout on narrower screens*/
+@media screen and (max-width: 1000px) {
+  .content-grid {
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 300px 300px;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .content-grid {
+    grid-template-columns: 150px;
+    grid-template-rows: 300px 300px 300px 300px;
+    margin-top: 20px;
+  }
+  .main-body h2 {
+    margin-bottom: 20%;
+  }
+}
+
 .body-content-boxes {
   height: 150px;
   width: 150px;
@@ -136,7 +169,7 @@ button {
 .quote-items {
   /*border: solid 2px red;*/
   width: 500px;
-  flex: 0 1 auto;
+  flex: 0 2 auto;
   display: flex;
   flex-direction: column;
 }
@@ -145,7 +178,9 @@ button {
   align-self: flex-end;
 }
 
-/*--------------CALL TO ACTION STYLING--------------*/
+/*--------------CALL TO ACTION STYLING-------------
+--------------------------------------------------
+----------------------------------------------------*/
 
 .call-to-action-container {
   background-color: #3882f6;
